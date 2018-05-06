@@ -24,9 +24,8 @@ def process_command_logic(cmd):
 
 
 # ##ESCAPE
-# def koniec():
-#     ptWindow.bind('<Escape>', sys.exit)
-#
+def koniec(event):
+    on_window_close()
 
 # TkInter callback functions
 #
@@ -75,6 +74,7 @@ TXTConsole = Text(ptWindow, height=25, width=80)
 TXTConsole.grid(row=0, column=0)
 TXTConsole.insert(END, 'PieTalk 3000 started\n')
 TXTConsole.insert(END, 'please, enter message or command to lime text area and press enter/send button\n')
+TXTConsole.bind('<Escape>', koniec)
 TXTConsole.config(state=DISABLED)
 
 #
@@ -92,7 +92,6 @@ for x in chat.get_rooms(1, 0):
 #
 TXTCommand = Entry(ptWindow, bd=2, width=80)
 TXTCommand.bind('<Return>', on_key_press)
-TXTCommand.bind('<Escape>', on_key_press)
 TXTCommand.grid(row=1, column=0)
 TXTCommand.config({'background': 'Lime'})
 TXTCommand.focus()
