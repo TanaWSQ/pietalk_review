@@ -1,5 +1,6 @@
 # Úloha #2 - deadline 2018-05-09
 
+
 Domáca úloha sa skladá z troch povinných častí (1. - 3.) a zo 4. nepovinnej (náročnej) časti. Odhadovaný čas na vyriešenie povinnej časti je *2-4 hodiny*. Ak vám riešenie zaberá výrazne viac času a daný priestor nemáte, pripravte si nedokončené úlohy spolu s otázkami na call k domácej úlohe v pondelok _7. mája 2018 o 18:00_. Ak vám niečo v úlohe bráni/zasekli ste sa, nehanbite sa to komunikovať.
 
 Tip: V prípade, že si nepamätáte postup, ako _odklonovať repozitár_, spraviť _commit_, _push_ či _pull request_, môžete si ho osviežiť z videa z prvej prednášky "Úvod do programátorských nástrojov" - po 4min18s a po 13min50s, resp. z druhej prednášky "Úvod do softvérového cyklu" po 1h25min.
