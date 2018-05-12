@@ -6,6 +6,8 @@ from . import ConsoleColors as CC
 # console implementation
 #
 
+def info(text):
+    print( CC.OKGREEN, text, CC.ENDC )
 
 def msg(text):
     print( CC.OKBLUE, text, CC.ENDC );
