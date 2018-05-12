@@ -24,7 +24,7 @@ class Chat:
     # @singleUserChatroom
     # #multipleUserChatroom
     # TODO: implement
-    def get_rooms(self, i, int1):
+    def get_rooms(self):
         return ['#general', '@Ariel', '@Mulan', '@Pocahontas']
 
     # get list of update events from server

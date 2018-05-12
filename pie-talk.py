@@ -2,25 +2,37 @@ from tkinter import *
 
 from Classes import Chat
 
+import datetime
+
 chat = Chat.Chat()
 print(chat.config.getKey('testkey'))
+chat.config.setKey('user.nick', 'rusnovodic47')
+print(chat.config.getKey('user.nick'))
+print(chat.config.getKey('totoneexistuje'))
 
 
 def window_print_line(txt):
+    cas = datetime.datetime.now()
     TXTConsole.config(state=NORMAL)
-    TXTConsole.insert(END, (cas.strftime('[%Y-%m-%d %H:%M:%S]')) + ' ' + txt + "\n")
+    TXTConsole.insert(END,cas.strftime('[%Y-%m-%d] [%H:%M]') + txt + "\n")
     TXTConsole.config(state=DISABLED)
 
-
-## Cas
-import datetime
-cas = datetime.datetime.now()
-print(cas.strftime('%Y-%m-%d %H:%M:%S'))
 
 def process_command_logic(cmd):
     if cmd == 'bye':
         on_window_close()
 
+    elif cmd == '/nick':
+        chat.user.get_nick()
+
+    elif cmd == '/nick.rusnovodic47':
+        chat.user.set_nick()
+
+    elif cmd == '/status':
+        chat.user.get_status()
+
+    elif cmd == '/status opat prichadza vlak.... :/':
+        chat.user.set_status()
 
 
 # ##ESCAPE
@@ -67,6 +79,7 @@ ptWindow.winfo_toplevel().title('PieTalk 3000!')
 ptWindow.resizable(1, 1)
 ptWindow.protocol('WM_DELETE_WINDOW', on_window_close)
 
+ptWindow.bind('<Escape>', koniec)
 #
 # main chat text window
 #
@@ -74,7 +87,7 @@ TXTConsole = Text(ptWindow, height=25, width=80)
 TXTConsole.grid(row=0, column=0)
 TXTConsole.insert(END, 'PieTalk 3000 started\n')
 TXTConsole.insert(END, 'please, enter message or command to lime text area and press enter/send button\n')
-TXTConsole.bind('<Escape>', koniec)
+
 TXTConsole.config(state=DISABLED)
 
 #
@@ -84,7 +97,7 @@ LBUsers = Listbox(ptWindow, height=20, width=20)
 LBUsers.grid(row=0, column=1)
 LBUsers.bind('<<ListboxSelect>>', on_user_select)
 
-for x in chat.get_rooms(1, 0):
+for x in chat.get_rooms():
     LBUsers.insert(END, x)
 
 #

@@ -2,8 +2,8 @@ class User:
 
     def __init__(self):
         self.updated = False
-        self.nick = 'not set'
-        self.status = 'not set'
+        self.nick = 'user.nick'
+        self.status = 'user.status'
 
     def is_updated(self):
         return self.updated
